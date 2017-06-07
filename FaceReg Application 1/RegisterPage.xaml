@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="FaceRegApplication1.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FaceRegApplication1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="BlanchedAlmond" Padding="20">
+            <TextBlock Grid.Row="0" Text="Register" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+            <Button x:Name="Logout_button" Content="Log out" Padding="0 10"
+                Width="207" HorizontalAlignment="Center" VerticalAlignment="Center" Click="button_logout" Margin="580,2,20,-10" RenderTransformOrigin="-0.434,0.352"/>
+            <Button x:Name="edit_button" Content="Edit" Padding="0 10"
+                Width="207" HorizontalAlignment="Center" VerticalAlignment="Center" Click="button_edit" Margin="202,3,871,-10" RenderTransformOrigin="-0.434,0.352"/>
+
+        </Grid>
+
+
+
+        <StackPanel Grid.Row="1" Margin="0 50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Margin="0 10" Width="300">
+                    <StackPanel>
+                        <TextBlock Text="First Name"></TextBlock>
+                        <TextBox x:Name="tbxFirstName"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="0 20 0 0">
+                        <TextBlock Text="Last Name"></TextBlock>
+                        <TextBox x:Name="tbxLastName"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="0 20 0 0">
+                        <TextBlock Text="Email"></TextBlock>
+                        <TextBox x:Name="tbxEmail" PlaceholderText=""></TextBox>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+                    <Border Background="AntiqueWhite">
+                        <TextBlock Text="Picture" HorizontalAlignment="Center" Padding="0 5" FontSize="26"></TextBlock>
+                    </Border>
+
+                    <Canvas Width="300" Height="300" Background="Gray">
+                        <CaptureElement x:Name="previewElement" Width="300" Height="300" Visibility="Visible"></CaptureElement>
+                        <Image x:Name="captureImage" Width="300" Height="300" Visibility="Collapsed"></Image>
+                    </Canvas>
+
+                    <Button Grid.Row="3" x:Name="buttonTakePicture" Width="300" Height="40"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonTakePicture_Click"></Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button x:Name="buttonRegister" Content="Register" Padding="0 10"
+                Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonRegister_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

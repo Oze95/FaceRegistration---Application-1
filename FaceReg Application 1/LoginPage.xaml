@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="FaceRegApplication1.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FaceRegApplication1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:WindowState =" Maximized"
+    xmlns:ResizeMode ="NoResize">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Background="BlanchedAlmond" Padding="20" >
+            <Hub Header="Welcome" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0 50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Margin="0 10" Width="300">
+                    <StackPanel>
+                        <TextBlock Text="Login" FontSize="20" Padding="10"></TextBlock>
+                        <TextBlock Text="Username"></TextBlock>
+                        <TextBox x:Name="tbxUsername" PlaceholderText="" TextChanged="tbxUsername_TextChanged" KeyDown="enterPressed"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="0 20 0 0">
+                        <TextBlock Text="Password"></TextBlock>
+                        <PasswordBox x:Name="tbxPassword" PlaceholderText="" KeyDown="enterPressed"></PasswordBox>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button x:Name="btnLogin" Content="Login" Padding="0 10"
+                Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonLogin_Click" ></Button>
+        </StackPanel>
+
+    </Grid>
+</Page>
